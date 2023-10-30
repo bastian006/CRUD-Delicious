@@ -1,0 +1,50 @@
+@{
+    ViewData["Title"] = "New Dish";
+}
+
+@model Dish
+
+<div class="card shadow mt-5 mx-auto w-50 border-3 border-light-subtle">
+    <div class="card-header">
+        <h1 class="text-center text-warning-emphasis">Add a Dish!</h1>
+        <h5 class="text-center"><a asp-action="Index" asp-controller="Home">Home</a> | 
+            <span class="text-secondary">Add a Dish</span></h5>
+    </div>
+    <div class="card-body">
+        <form asp-action="CreateDish" asp-controller="Dish" method="post">
+            <div class="mb-3">
+                <label asp-for="Name" class="form-label   fs-5 text-warning-emphasis"></label>
+                <input asp-for="Name" class="form-control fs-5 text-center"></input>
+                <span asp-validation-for="Name" class="fs-6 text-danger-emphasis"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="Chef" class="form-label   fs-5 text-warning-emphasis"></label>
+                <input asp-for="Chef" class="form-control fs-5 text-center"></input>
+                <span asp-validation-for="Chef" class="fs-6 text-danger-emphasis"></span>
+            </div>
+            <div class="mb-3">
+                <label  asp-for="Tastiness" class="form-label  fs-5 text-warning-emphasis"></label>
+                <select asp-for="Tastiness" class="form-select fs-5">
+                    <option disabled selected class="text-center">---------- Select Rating ----------</option>
+                    <option value="1" class="text-center">1</option>
+                    <option value="2" class="text-center">2</option>
+                    <option value="3" class="text-center">3</option>
+                    <option value="4" class="text-center">4</option>
+                    <option value="5" class="text-center">5</option>
+                </select>
+                <span asp-validation-for="Tastiness" class="fs-6 text-danger-emphasis"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="Calories" class="form-label   fs-5 text-warning-emphasis"></label>
+                <input asp-for="Calories" class="form-control fs-5 text-center"></input>
+                <span asp-validation-for="Calories" class="fs-6 text-danger-emphasis"></span>
+            </div>
+            <div class="mb-4">
+                <label asp-for="Description" class="form-label   fs-5 text-warning-emphasis"></label>
+                <textarea asp-for="Description" class="form-control fs-5"></textarea>
+                <span asp-validation-for="Description" class="fs-6 text-center text-danger-emphasis"></span>
+            </div>
+            <button class="btn btn-primary float-end">Add Dish</button>
+        </form>
+    </div>
+</div>
